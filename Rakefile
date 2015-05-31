@@ -1,21 +1,39 @@
-# encoding: UTF-8
+#!/usr/bin/env rake
+# encoding: utf-8
 
-# syntax/lint checks: RuboCop & Foodcritic
-namespace :lint do
-  require 'rubocop/rake_task'
-  require 'foodcritic'
+require 'foodcritic'
+require 'rubocop/rake_task'
 
-  desc 'Run Ruby syntax/lint checks'
-  RuboCop::RakeTask.new(:ruby)
-
+# Foodcritic
+desc 'Run foodcritic lint checks'
+task :foodcritic do
+  if Gem::Version.new('1.9.2') <= Gem::Version.new(RUBY_VERSION.dup)
+    puts 'Running Foodcritic tests...'
+    FoodCritic::Rake::LintTask.new do |t|
+      t.options = { fail_tags: ['any'] }
+      puts 'done.'
+    end
+  else
+    puts "WARN: foodcritic run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
+  end
 end
 
-desc 'Run all syntax/lint checks'
-task lint: ['lint:ruby']
+# Rubocop
+desc 'Run Rubocop lint checks'
+task :rubocop do
+  RuboCop::RakeTask.new
+end
+
+desc 'Run linters'
+task lint: [:rubocop, :foodcritic]
+
+# Run the whole shebang
+desc 'Run all tests'
+task test: [:lint]
 
 # Travic CI
 desc 'Run tests on Travis CI'
 task travis: [:lint]
 
 # the default rake task should just run it all
-task default: [:lint]
+task default: [:test]
