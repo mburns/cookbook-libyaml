@@ -9,7 +9,3 @@ group :test do
   gem 'thor-foodcritic'
   gem 'rubocop',    '~> 0.27.0'
 end
-
-group :development do
-  gem 'vagrant', '~> 1.0.5'
-end
