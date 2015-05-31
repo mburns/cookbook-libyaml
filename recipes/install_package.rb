@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: libyaml
-# Recipe:: default
+# Recipe:: install_package
 #
 # Copyright (C) 2015 Michael Burns
 # Copyright (C) 2012 Cassiano Leal
@@ -18,4 +18,7 @@
 # limitations under the License.
 #
 
-include_recipe "install_#{node['libyaml']['install_type']}"
+package 'libyaml' do
+  action :install
+  version node['libyaml']['version']
+end
