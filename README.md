@@ -1,5 +1,8 @@
 # libyaml cookbook
 
+[![Build Status](https://travis-ci.org/mburns/cookbook-libyaml.svg)](https://travis-ci.org/mburns/cookbook-libyaml)
+[![Chef cookbook](https://img.shields.io/cookbook/v/libyaml.svg)](https://supermarket.chef.io/cookbooks/libyaml)
+
 Install libyaml from source.
 
 # Requirements
@@ -24,4 +27,5 @@ Just include the default recipe and libyaml gets installed.
 
 # Author
 
+Author:: Michael Burns (michael@mirwin.net)
 Author:: Cassiano Leal (cl@cassianoleal.com)
