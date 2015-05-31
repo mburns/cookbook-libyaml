@@ -28,4 +28,5 @@ Just include the default recipe and libyaml gets installed.
 # Author
 
 Author:: Michael Burns (michael@mirwin.net)
+
 Author:: Cassiano Leal (cl@cassianoleal.com)
