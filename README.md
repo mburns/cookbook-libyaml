@@ -1,6 +1,6 @@
 # libyaml cookbook
 
-[![Build Status](https://travis-ci.org/mburns/cookbook-libyaml.svg)](https://travis-ci.org/mburns/cookbook-libyaml)
+[![Build Status](https://travis-ci.org/mburns/libyaml.svg)](https://travis-ci.org/mburns/libyaml)
 [![Chef cookbook](https://img.shields.io/cookbook/v/libyaml.svg)](https://supermarket.chef.io/cookbooks/libyaml)
 
 Install libyaml from source.
