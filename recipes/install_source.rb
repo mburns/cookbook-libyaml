@@ -25,7 +25,7 @@ remote_file "yaml-#{version}.tar.gz" do
   path Chef::Config[:file_cache_path]
   source "#{node['libyaml']['url']}/yaml-#{version}.tar.gz"
   checksum node['libyaml']['checksum']
-  mode 0644
+  mode 0o644
 end
 
 lib_name = value_for_platform('default' => 'libyaml.so')

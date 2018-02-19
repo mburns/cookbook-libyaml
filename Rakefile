@@ -1,6 +1,4 @@
 #!/usr/bin/env rake
-# encoding: utf-8
-
 require 'foodcritic'
 require 'rubocop/rake_task'
 
@@ -25,7 +23,7 @@ task :rubocop do
 end
 
 desc 'Run linters'
-task lint: [:rubocop, :foodcritic]
+task lint: %i[rubocop foodcritic]
 
 # Run the whole shebang
 desc 'Run all tests'
